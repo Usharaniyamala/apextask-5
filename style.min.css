@@ -1,0 +1,259 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #f7e8d9, #fce7b2, #ffcb91);
+    color: #ba2fc1;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: #46244c;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px #ba2fc1(217, 36, 36, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 1s ease-in-out;
+}
+
+header .logo {
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    animation: fadeIn 1.5s ease;
+}
+
+header .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+header .nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffcb91;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+header .nav-links a:hover {
+    color: #ffcb91;
+}
+
+header .nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/chocolate-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    animation: bounceIn 1.5s ease;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease;
+}
+
+.hero .cta-button {
+    background: #ffcb91;
+    color: #46244c;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 2s ease;
+}
+
+.hero .cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Product Grid */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.product {
+    background: linear-gradient(145deg, #ffffff, #ffeedb);
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 40%;
+    height: 50%;
+    object-fit: cover;
+    border-bottom: 2px solid #ffcb91;
+    border-radius: 12px 12px 0 0;
+}
+
+.product h3 {
+    margin: 15px 0;
+    font-size: 1.6em;
+    color: #46244c;
+    font-weight: bold;
+}
+
+.product p {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.product button {
+    background: #ffcb91;
+    color: #46244c;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background: #46244c;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 1em;
+    position: relative;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer p span {
+    color: #ffcb91;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.8em;
+    }
+
+    .hero p {
+        font-size: 1.3em;
+    }
+
+    .cta-button {
+        font-size: 1em;
+    }
+
+    header .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
